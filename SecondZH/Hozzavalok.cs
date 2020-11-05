@@ -41,6 +41,13 @@ namespace SecondZH
             }
             return Anyag.CompareTo(other.Anyag);
         }
+
+        //2 hozzávaló egyenlősége - Contains használja.
+        public override bool Equals(object obj)
+        {
+            return obj is Hozzavalo hozzavalo &&
+                   Anyag == hozzavalo.Anyag;
+        }
     }
 
     class Hozzavalok
