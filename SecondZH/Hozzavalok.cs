@@ -52,33 +52,33 @@ namespace SecondZH
 
     class Hozzavalok
     {
-        //static void Main(string[] args)
-        //{
-        //    //Listába tárolom az elemeket.
-        //    List<Hozzavalo> hozzavalok = new List<Hozzavalo>();
-        //    string line;
-        //    //Az összes sor beolvasása.
-        //    while ((line = Console.ReadLine()) != null)
-        //    {
-        //        string[] data = line.Split(';');
-        //        Hozzavalo hozzavalo = new Hozzavalo(data[0], int.Parse(data[1]));
-        //        //Feltételes összeadás vagy hozzáadás a listához
-        //        if (hozzavalok.Contains(hozzavalo))
-        //        {
-        //            hozzavalok[hozzavalok.IndexOf(hozzavalo)].AddDB(hozzavalo);
-        //        }
-        //        else
-        //        {
-        //            hozzavalok.Add(hozzavalo);
-        //        }
-        //    }
-        //    //Rendezés. Csak List-nél van már implementálva, IList-nél nem.
-        //    hozzavalok.Sort();
-        //    //Elemek kiírása egyessével.
-        //    foreach (Hozzavalo item in hozzavalok)
-        //    {
-        //        Console.WriteLine(item.ToString());
-        //    }
-        //}
+        static void Main(string[] args)
+        {
+            //Listába tárolom az elemeket.
+            List<Hozzavalo> hozzavalok = new List<Hozzavalo>();
+            string line;
+            //Az összes sor beolvasása.
+            while ((line = Console.ReadLine()) != null)
+            {
+                string[] data = line.Split(';');
+                Hozzavalo hozzavalo = new Hozzavalo(data[0], int.Parse(data[1]));
+                //Feltételes összeadás vagy hozzáadás a listához
+                if (hozzavalok.Contains(hozzavalo))
+                {
+                    hozzavalok[hozzavalok.IndexOf(hozzavalo)].AddDB(hozzavalo);
+                }
+                else
+                {
+                    hozzavalok.Add(hozzavalo);
+                }
+            }
+            //Rendezés. Csak List-nél van már implementálva, IList-nél nem.
+            hozzavalok.Sort();
+            //Elemek kiírása egyessével.
+            foreach (Hozzavalo item in hozzavalok)
+            {
+                Console.WriteLine(item.ToString());
+            }
+        }
     }
 }

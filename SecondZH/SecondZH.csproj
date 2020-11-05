@@ -44,7 +44,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Hozzavalok.cs" />
+    <Compile Include="LegoKeszletek.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Szotar.cs" />
+    <Compile Include="Tartozasok.cs" />
+    <Compile Include="Zarthelyi.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
