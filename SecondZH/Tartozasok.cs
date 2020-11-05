@@ -41,6 +41,8 @@ namespace SecondZH
                     tartozóAdatai[hitelező] = tartozás + összeg;
                 }
             }
+
+            //Kiíratás
             foreach (var f_l_item in tartozások)
             {
                 foreach (var s_l_item in f_l_item.Value)

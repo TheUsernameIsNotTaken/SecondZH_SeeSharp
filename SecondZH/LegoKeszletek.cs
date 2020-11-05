@@ -10,23 +10,22 @@ namespace SecondZH
 {
     class Lego
     {
+        //A szükséges propery-k
         public int Termékkód { get; set; }
         public string Szett_neve { get; set; }
-        public string Szett_neveInL { get; set; }
         public string Téma_neve { get; set; }
-        public string Téma_neveInL { get; set; }
         public int Elemek_száma { get; set; }
 
+        //Egy új szett példányosítása.
         public Lego(int termékkód, string szett_neve, string téma_neve, int elemek_száma)
         {
             Termékkód = termékkód;
             Szett_neve = szett_neve;
-            Szett_neveInL = szett_neve.ToLower();
             Téma_neve = téma_neve;
-            Téma_neveInL = téma_neve.ToLower();
             Elemek_száma = elemek_száma;
         }
 
+        //A példány szöveggé alakítva a kívánt formátumban.
         public override string ToString()
         {
             return Szett_neve + " (" + Termékkód + "): " + Elemek_száma + " - " + Téma_neve;
@@ -48,8 +47,8 @@ namespace SecondZH
             }
             //Kiíratás az első rendezéssel
             foreach (var készlet in készletek.OrderByDescending(x => x.Elemek_száma)
-                .ThenBy(x => x.Téma_neveInL)
-                .ThenBy(x => x.Szett_neveInL)
+                .ThenBy(x => x.Téma_neve)
+                .ThenBy(x => x.Szett_neve)
                 .ThenBy(x => x.Termékkód))
             {
                 Console.WriteLine(készlet.ToString());
@@ -57,8 +56,8 @@ namespace SecondZH
             //Üres sor
             Console.WriteLine();
             //Kiíratás a 2. rendezéssel
-            foreach (var készlet in készletek.OrderBy(x => x.Téma_neveInL)
-                .ThenBy(x => x.Szett_neveInL)
+            foreach (var készlet in készletek.OrderBy(x => x.Téma_neve)
+                .ThenBy(x => x.Szett_neve)
                 .ThenBy(x => x.Termékkód))
             {
                 Console.WriteLine(készlet.ToString());

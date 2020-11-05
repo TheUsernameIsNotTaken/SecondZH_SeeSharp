@@ -7,46 +7,39 @@ using System.Collections.Generic;
 
 namespace SecondZH
 {
+    //Hozzávaló segédosztály. Az azonos osztály példányai összehasonlíthatóak egymással.
     class Hozzavalo : IComparable<Hozzavalo>
     {
-        string anyag;
-        int db;
+        string Anyag;
+        int DB;
 
+        //Egy hozzávaló egy anyagból és annak a mennyiségéből áll.
         public Hozzavalo(string anyag, int db)
         {
-            this.anyag = anyag;
-            this.db = db;
+            this.Anyag = anyag;
+            this.DB = db;
         }
 
         //Két hozzávaló darabszámának összeadása
         public void AddDB(Hozzavalo other)
         {
-            db += other.db;
+            DB += other.DB;
         }
 
+        //Szöveggé alakítás a kívánt formában.
         public override string ToString()
         {
-            return anyag + ";" + db;
+            return Anyag + ";" + DB;
         }
 
+        //Összahasonlítás -> Rendezés mennyiség szerint fordítva, és név szerint növekvő sorrendben.
         public int CompareTo(Hozzavalo other)
         {
-            if (db != other.db)
+            if (DB != other.DB)
             {
-                return other.db.CompareTo(db);
+                return other.DB.CompareTo(DB);
             }
-            return anyag.CompareTo(other.anyag);
-        }
-
-        public override bool Equals(object obj)
-        {
-            return obj is Hozzavalo hozzavalo &&
-                   anyag == hozzavalo.anyag;
-        }
-
-        public override int GetHashCode()
-        {
-            return 60720897 + EqualityComparer<string>.Default.GetHashCode(anyag);
+            return Anyag.CompareTo(other.Anyag);
         }
     }
 
